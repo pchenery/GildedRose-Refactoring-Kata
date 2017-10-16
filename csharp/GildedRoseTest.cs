@@ -45,7 +45,7 @@ namespace csharp
         [Test]
         public void Quality_Can_Never_Be_Greater_than_50()
         {
-            IList<Item> items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 50 } };
+            IList<Item> items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 10, Quality = 50 } };
             GildedRose app = new GildedRose(items);
             app.UpdateQuality();
             Assert.AreEqual(items[0].Quality, 50);

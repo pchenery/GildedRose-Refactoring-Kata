@@ -9,16 +9,16 @@ namespace csharp
         [Test]
         public void Add_Item_to_Inventory()
         {
-            IList<Item> items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
+            IList<Item> items = new List<Item> { new Item { Name = "+5 Dexterity Vest", SellIn = 0, Quality = 0 } };
             GildedRose app = new GildedRose(items);
             app.UpdateQuality();
-            Assert.AreEqual("foo", items[0].Name);
+            Assert.AreEqual("+5 Dexterity Vest", items[0].Name);
         }
 
         [Test]
         public void Quality_Degrades_Before_SellbyDate()
         {
-            IList<Item> items = new List<Item> { new Item { Name = "foo", SellIn = 10, Quality = 10 } };
+            IList<Item> items = new List<Item> { new Item { Name = "Elixir of the Mongoose", SellIn = 10, Quality = 10 } };
             GildedRose app = new GildedRose(items);
             app.UpdateQuality();
             Assert.AreEqual(items[0].Quality, 9);
@@ -112,6 +112,15 @@ namespace csharp
             GildedRose app = new GildedRose(items);
             app.UpdateQuality();
             Assert.AreEqual(items[0].Quality, 0);
+        }
+
+        [Test]
+        public void Conjured_Decrease_Quality_Twice_As_Fast_As_Normal()
+        {
+            IList<Item> items = new List<Item> { new Conjured() { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
+            GildedRose app = new GildedRose(items);
+            app.UpdateQuality();
+            Assert.AreEqual(items[0].Quality, 4);
         }
     }
 }

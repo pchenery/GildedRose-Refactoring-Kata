@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Headers;
 
 namespace csharp
 {
@@ -10,7 +6,7 @@ namespace csharp
     {
         public override void UpdateQuality()
         {
-            Quality = Quality;
+            Quality = 80;
         }
     }
 }

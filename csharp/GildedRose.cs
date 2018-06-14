@@ -10,25 +10,47 @@ namespace csharp
             this.Items = Items;
         }
 
+        public void DecreaseSellDate(Item item)
+        {
+            if (item.Name != "Sulfuras, Hand of Ragnaros")
+            {
+                item.SellIn = item.SellIn - 1;
+            }
+        }
+
+        public void DecreaseQuality(Item item)
+        {
+            if (item.Quality > 0)
+            {
+                if (item.Name == "Conjured Mana Cake")
+                {
+                    item.Quality = item.Quality - 2;
+                }
+                else if (item.Name != "Sulfuras, Hand of Ragnaros")
+                {
+                    item.Quality--;
+                }
+            }
+        }
+
+        public void IncreaseQuality(Item item)
+        {
+            item.Quality++;
+        }
+
         public void UpdateQuality()
         {
             for (var i = 0; i < Items.Count; i++)
             {
                 if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (Items[i].Quality > 0)
-                    {
-                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
-                    }
+                    DecreaseQuality(Items[i]);
                 }
                 else
                 {
                     if (Items[i].Quality < 50)
                     {
-                        Items[i].Quality = Items[i].Quality + 1;
+                        IncreaseQuality(Items[i]);
 
                         if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
                         {
@@ -36,7 +58,7 @@ namespace csharp
                             {
                                 if (Items[i].Quality < 50)
                                 {
-                                    Items[i].Quality = Items[i].Quality + 1;
+                                    IncreaseQuality(Items[i]);
                                 }
                             }
 
@@ -44,17 +66,14 @@ namespace csharp
                             {
                                 if (Items[i].Quality < 50)
                                 {
-                                    Items[i].Quality = Items[i].Quality + 1;
+                                    IncreaseQuality(Items[i]);
                                 }
                             }
                         }
                     }
                 }
 
-                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                {
-                    Items[i].SellIn = Items[i].SellIn - 1;
-                }
+                DecreaseSellDate(Items[i]);
 
                 if (Items[i].SellIn < 0)
                 {
@@ -66,7 +85,7 @@ namespace csharp
                             {
                                 if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                                 {
-                                    Items[i].Quality = Items[i].Quality - 1;
+                                    DecreaseQuality(Items[i]);
                                 }
                             }
                         }
@@ -79,7 +98,7 @@ namespace csharp
                     {
                         if (Items[i].Quality < 50)
                         {
-                            Items[i].Quality = Items[i].Quality + 1;
+                            IncreaseQuality(Items[i]);
                         }
                     }
                 }

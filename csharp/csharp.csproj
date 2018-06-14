@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="ApprovalTest.cs" />
     <Compile Include="Backstage.cs" />
+    <Compile Include="Conjured.cs" />
     <Compile Include="InheritItem.cs" />
     <Compile Include="Cheese.cs" />
     <Compile Include="GildedRose.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Legendary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Standard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

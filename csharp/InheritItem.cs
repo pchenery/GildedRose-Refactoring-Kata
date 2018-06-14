@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace csharp
+﻿namespace csharp
 {
-    abstract class InheritItem : Item
+    public class InheritItem : Item
     {
-        public abstract void UpdateQuality();
+        public virtual void UpdateQuality()
+        {
+            Quality++;
+        }
     }
 }

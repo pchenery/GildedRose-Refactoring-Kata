@@ -2,8 +2,13 @@
 
 namespace csharp
 {
-    class Legendary : InheritItem
+    class LegendaryItem : StandardItem
     {
+        public LegendaryItem(StandardItem item)
+            : base(item)
+        {
+        }
+
         public override void UpdateQuality()
         {
             Quality = 80;

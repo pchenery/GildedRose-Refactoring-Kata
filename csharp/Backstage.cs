@@ -1,20 +1,24 @@
-﻿namespace csharp
+﻿using System;
+
+namespace csharp
 {
-    class Backstage : InheritItem
+    class BackstageItem : StandardItem
     {
+        public BackstageItem(StandardItem item)
+            : base(item)
+        {
+        }
+
         public override void UpdateQuality()
         {
-            if (SellIn > 10 && Quality < 50)
+            base.UpdateQuality();
+            if (SellIn < 11 && Quality < MaxQuality)
             {
                 Quality++;
             }
-            else if (SellIn <= 10)
+            else if (SellIn < 6 && Quality < MaxQuality)
             {
-                Quality = Quality + 2;
-            }
-            else if (SellIn <= 5)
-            {
-                Quality = Quality + 5;
+                Quality = Math.Min(Quality + 2, MaxQuality);
             }
             else if (SellIn == 0)
             {

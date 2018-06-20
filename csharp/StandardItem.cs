@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class Standard : InheritItem
+    class StandardItem : InheritItem
     {
+        public const int MaxQuality = 50;
+
+        public StandardItem(StandardItem item)
+        {
+            Item = item;
+        }
+
+        private StandardItem Item { get; set; }
+
         public override void UpdateQuality()
         {
             if (Quality > 0)

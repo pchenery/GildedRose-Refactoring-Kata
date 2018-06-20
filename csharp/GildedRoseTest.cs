@@ -117,7 +117,7 @@ namespace csharp
         [Test]
         public void Conjured_Decrease_Quality_Twice_As_Fast_As_Normal()
         {
-            IList<Item> items = new List<Item> { new Conjured() { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
+            IList<Item> items = new List<Item> { new Item() { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
             GildedRose app = new GildedRose(items);
             app.UpdateQuality();
             Assert.AreEqual(items[0].Quality, 4);

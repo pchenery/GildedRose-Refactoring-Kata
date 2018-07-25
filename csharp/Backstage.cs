@@ -2,10 +2,20 @@
 
 namespace csharp
 {
-    class BackstageItem : StandardItem
+    class BackstageItem : InheritItem
     {
-        public BackstageItem(StandardItem item)
+        public const int MaxQuality = 50;
+        public BackstageItem(InheritItem item)
             : base(item)
+        {
+        }
+
+        public BackstageItem(string name, int sellin, int quality)
+            : base(name, sellin, quality)
+        {
+        }
+
+        public BackstageItem()
         {
         }
 

@@ -1,10 +1,19 @@
 ﻿namespace csharp
 {
-    class MaturingItem : StandardItem
+    class MaturingItem : InheritItem
     {
-     
-        public MaturingItem(StandardItem item)
+
+        public MaturingItem(InheritItem item)
             : base(item)
+        {
+        }
+
+        public MaturingItem(string name, int sellin, int quality)
+            : base(name, sellin, quality)
+        {
+        }
+
+        public MaturingItem()
         {
         }
 

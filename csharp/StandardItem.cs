@@ -10,9 +10,18 @@ namespace csharp
     {
         public const int MaxQuality = 50;
 
-        public StandardItem(StandardItem item)
+        //public StandardItem(InheritItem item)
+        //    : base(item)
+        //{
+        //}
+
+        public StandardItem(string name, int sellin, int quality)
+            : base(name, sellin, quality)
         {
-            Item = item;
+        }
+
+        public StandardItem()
+        {
         }
 
         private StandardItem Item { get; set; }

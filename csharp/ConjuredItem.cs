@@ -2,11 +2,21 @@
 
 namespace csharp
 {
-    class ConjuredItem : StandardItem
+    class ConjuredItem : InheritItem
     {
+        public const int MaxQuality = 50;
 
-        public ConjuredItem(StandardItem item)
+        public ConjuredItem(InheritItem item)
             : base(item)
+        {
+        }
+
+        public ConjuredItem(string name, int sellin, int quality)
+            : base(name, sellin, quality)
+        {
+        }
+
+        public ConjuredItem()
         {
         }
 

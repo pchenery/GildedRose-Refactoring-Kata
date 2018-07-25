@@ -5,9 +5,16 @@ namespace csharp
     public class GildedRose
     {
         readonly IList<Item> Items;
+        private readonly IList<InheritItem> inherititems;
+
         public GildedRose(IList<Item> Items)
         {
             this.Items = Items;
+        }
+
+        public GildedRose(IList<InheritItem> inheritItems)
+        {
+            inherititems = inheritItems;
         }
 
         public void DecreaseSellDate(Item item)

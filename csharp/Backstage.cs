@@ -5,15 +5,15 @@ namespace csharp
     class BackstageItem : InheritItem
     {
         public const int MaxQuality = 50;
-        public BackstageItem(InheritItem item)
-            : base(item)
-        {
-        }
+        //public BackstageItem(InheritItem item)
+        //    : base(item)
+        //{
+        //}
 
-        public BackstageItem(string name, int sellin, int quality)
-            : base(name, sellin, quality)
-        {
-        }
+        //public BackstageItem(string name, int sellin, int quality)
+        //    : base(name, sellin, quality)
+        //{
+        //}
 
         public BackstageItem()
         {
@@ -21,18 +21,21 @@ namespace csharp
 
         public override void UpdateQuality()
         {
-            base.UpdateQuality();
-            if (SellIn < 11 && Quality < MaxQuality)
+            if (SellIn == 0)
             {
-                Quality++;
+                Quality = 0;
+            }
+            else if (SellIn < 11 && Quality < MaxQuality)
+            {
+                Quality = Quality + 2;
             }
             else if (SellIn < 6 && Quality < MaxQuality)
             {
-                Quality = Math.Min(Quality + 2, MaxQuality);
+                Quality = Math.Min(Quality + 3, MaxQuality);
             }
-            else if (SellIn == 0)
+            else
             {
-                Quality = 0;
+                Quality++;
             }
         }
     }

@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace csharp
+﻿namespace csharp
 {
     public class InheritItem : Item
     {
-        private InheritItem item;
+        //private InheritItem item;
 
         public InheritItem()
         {
@@ -29,14 +22,18 @@ namespace csharp
             Quality = item.Quality;
         }
 
-        public InheritItem(InheritItem item)
-        {
-            this.item = item;
-        }
+        //public InheritItem(InheritItem item)
+        //{
+        //    this.item = item;
+        //}
 
         public virtual void UpdateQuality()
         {
-            Quality++;
+        }
+
+        public void UpdateSellIn()
+        {
+            SellIn--;
         }
     }
 }

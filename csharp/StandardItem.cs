@@ -8,17 +8,17 @@ namespace csharp
 {
     class StandardItem : InheritItem
     {
-        public const int MaxQuality = 50;
+        private const int MaxQuality = 50;
 
         //public StandardItem(InheritItem item)
         //    : base(item)
         //{
         //}
 
-        public StandardItem(string name, int sellin, int quality)
-            : base(name, sellin, quality)
-        {
-        }
+        //public StandardItem(string name, int sellin, int quality)
+        //    : base(name, sellin, quality)
+        //{
+        //}
 
         public StandardItem()
         {
@@ -30,7 +30,15 @@ namespace csharp
         {
             if (Quality > 0)
             {
-                Quality--;
+                if (SellIn > 0)
+                {
+                    Quality--;
+                }
+                else
+                {
+                    Quality = 0;
+                    //Quality -= SellIn < 0 ? 2 : 1;
+                }
             }
         }
     }

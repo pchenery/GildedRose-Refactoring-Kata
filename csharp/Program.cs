@@ -49,9 +49,10 @@ namespace csharp
                 {
                     System.Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
                     Items[j].UpdateQuality();
+                    Items[j].UpdateSellIn();
                 }
                 Console.WriteLine("");
-                app.UpdateQuality();
+                //app.UpdateQuality();
             }
 
             Console.ReadLine();

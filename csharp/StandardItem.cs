@@ -15,11 +15,6 @@ namespace csharp
         //{
         //}
 
-        //public StandardItem(string name, int sellin, int quality)
-        //    : base(name, sellin, quality)
-        //{
-        //}
-
         public StandardItem()
         {
         }
@@ -30,15 +25,7 @@ namespace csharp
         {
             if (Quality > 0)
             {
-                if (SellIn > 0)
-                {
-                    Quality--;
-                }
-                else
-                {
-                    Quality = 0;
-                    //Quality -= SellIn < 0 ? 2 : 1;
-                }
+                Quality -= SellIn <= 0 ? 2 : 1;
             }
         }
     }

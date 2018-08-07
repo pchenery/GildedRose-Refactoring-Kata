@@ -2,8 +2,6 @@
 {
     public class InheritItem : Item
     {
-        //private InheritItem item;
-
         public InheritItem()
         {
         }
@@ -22,16 +20,11 @@
             Quality = item.Quality;
         }
 
-        //public InheritItem(InheritItem item)
-        //{
-        //    this.item = item;
-        //}
-
-        public virtual void UpdateQuality()
+         public virtual void UpdateQuality()
         {
         }
 
-        public void UpdateSellIn()
+        public virtual void UpdateSellIn()
         {
             SellIn--;
         }

@@ -4,16 +4,10 @@ namespace csharp
 {
     class MaturingItem : InheritItem
     {
-
         private const int MaxQuality = 50;
 
         //public MaturingItem(InheritItem item)
         //    : base(item)
-        //{
-        //}
-
-        //public MaturingItem(string name, int sellin, int quality)
-        //    : base(name, sellin, quality)
         //{
         //}
 

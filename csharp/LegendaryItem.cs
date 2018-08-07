@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-namespace csharp
+﻿namespace csharp
 {
     class LegendaryItem : InheritItem
     {

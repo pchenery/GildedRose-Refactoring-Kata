@@ -16,7 +16,7 @@ namespace csharp
 
         public override void UpdateQuality()
         {
-            if (SellIn == 0)
+            if (SellIn <= 0)
             {
                 Quality = 0;
             }
@@ -30,7 +30,7 @@ namespace csharp
             }
             else
             {
-                Quality++;
+                Quality = Math.Min(++Quality, MaxQuality);
             }
         }
     }
